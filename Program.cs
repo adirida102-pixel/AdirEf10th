@@ -127,7 +127,6 @@ namespace AdirEf10th
             //ArraySort.Sort_UnitTest();
             //Line.LineUT();
             Parabola.ParabolaUT();
-            //TEST
         }
 
         static void Targil5_2_1()
