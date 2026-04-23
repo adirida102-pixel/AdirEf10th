@@ -194,7 +194,7 @@ namespace AdirEf10th
             string cStr = $"{c}";
             string abPlus = b > 0 ? a == 0 ? "" : "+" : "";
             string bcPlus = c > 0 ? b == 0 && a == 0 ? "" : "+" : "";
-            string finalStr = $"f(x) = {aStr}{abPlus}{bStr}{bcPlus}{cStr} ";
+            string finalStr = $"f(x) = {aStr}{abPlus}{bStr}{bcPlus}{cStr}";
             return finalStr;
         }
     }
