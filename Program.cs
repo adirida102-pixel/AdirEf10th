@@ -126,7 +126,8 @@ namespace AdirEf10th
             //Traveler.TravelerUT();
             //ArraySort.Sort_UnitTest();
             //Line.LineUT();
-            Parabola.ParabolaUT();
+            //Parabola.ParabolaUT();
+            Matrix.Matrix_UT();
         }
 
         static void Targil5_2_1()

@@ -8,7 +8,7 @@ using Yod;
 
 namespace AdirEf10th
 {
-    internal class Cypher
+    internal class Cipher
     {
         public static void CypherUT()
         {
