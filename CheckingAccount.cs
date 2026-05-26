@@ -20,7 +20,24 @@ namespace AdirEf10th
 
         public static void CheckingAccount_UT()
         {
-            //pass
+            //CheckingAccount a1 = new CheckingAccount(1, 1, 1, "1");
+            //CheckingAccount a2 = new CheckingAccount(2, 2, 2, "2", 100);
+            //Console.WriteLine(a1);
+            //Console.WriteLine(a1.Deposit(100));
+            //Console.WriteLine(a1);
+            //Console.WriteLine(a1.Withdrawal(500));
+            //Console.WriteLine(a1);
+            //Console.WriteLine(a1.Withdrawal(500));
+            //Console.WriteLine(a1);
+            //Console.WriteLine(a1.Withdrawal(500));
+            //Console.WriteLine(a1);
+            //Console.WriteLine(a2);
+            //Console.WriteLine(a2.Deposit(300));
+            //Console.WriteLine(a2);
+            //Console.WriteLine(a2.Withdrawal(500));
+            //Console.WriteLine(a2);
+            //Console.WriteLine(a2.Withdrawal(200));
+            //Console.WriteLine(a2);
         }
 
         public CheckingAccount(int bankNum, int branchNum, int accountNum, string accountID)
@@ -79,6 +96,28 @@ namespace AdirEf10th
             {
                 this.overdraft = overdraft;
             }
+        }
+
+        public bool Deposit(int num)
+        {
+            bool success = false;
+            if (num > 0)
+            {
+                this.balance += num;
+                success = true;
+            }
+            return success;
+        }
+
+        public bool Withdrawal(int num)
+        {
+            bool success = false;
+            if (num > 0 && this.balance - num > -1 * this.overdraft)
+            {
+                this.balance -= num;
+                success = true;
+            }
+            return success;
         }
 
         public override string ToString()

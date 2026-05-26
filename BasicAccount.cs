@@ -8,6 +8,63 @@ namespace AdirEf10th
 {
     public class BasicAccount
     {
-        //pass
+        private int bankNum;
+        private int branchNum;
+        private int accountNum;
+        private string accountID;
+        private double balance;
+
+        public static void BasicAccount_UT()
+        {
+            BasicAccount a = new BasicAccount(0, 0, 0, "0");
+            Console.WriteLine(a.GetBalance());
+            Console.WriteLine(a.Deposit(1000000));
+            Console.WriteLine(a.GetBalance());
+        }
+
+        public BasicAccount(int bankNum, int branchNum, int accountNum, string accountID)
+        {
+            this.bankNum = bankNum;
+            this.branchNum = branchNum;
+            this.accountNum = accountNum;
+            this.accountID = accountID;
+            this.balance = 0;
+        }
+
+        public int GetBankNum()
+        {
+            return this.bankNum;
+        }
+
+        public int GetBranchNum()
+        {
+            return this.branchNum;
+        }
+
+        public int GetAccountNum()
+        {
+            return this.accountNum;
+        }
+
+        public string GetAccountID()
+        {
+            return this.accountID;
+        }
+
+        public double GetBalance()
+        {
+            return this.balance;
+        }
+
+        public bool Deposit(int num)
+        {
+            bool success = false;
+            if (num > 0)
+            {
+                this.balance += num;
+                success = true;
+            }
+            return success;
+        }
     }
 }

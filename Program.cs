@@ -128,6 +128,9 @@ namespace AdirEf10th
             //Line.LineUT();
             //Parabola.ParabolaUT();
             //Matrix.Matrix_UT();
+            //CheckingAccount.CheckingAccount_UT();
+            //SavingAccount.SavingAccount_UT();
+            //BasicAccount.BasicAccount_UT();
         }
 
         static void Targil5_2_1()
