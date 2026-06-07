@@ -10,6 +10,11 @@ namespace AdirEf10th
     {
         private string title;
 
+        public static void Manager_UT()
+        {
+            //pass
+        }
+        
         public Manager(string title, string name, Date employmentDate) : base(name, employmentDate)
         {
             this.title = title;
@@ -32,8 +37,8 @@ namespace AdirEf10th
 
         public override string ToString()
         {
-            string str = $"{this.GetTitle()}\n{base.ToString()}";
-            return str;
+            string managerStr = $"{this.GetTitle()}\n{base.ToString()}";
+            return managerStr;
         }
     }
 }

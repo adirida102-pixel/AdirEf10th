@@ -72,6 +72,7 @@ namespace AdirEf10th
             employeeString += $"Name: {this.GetName()}\n";
             employeeString += $"Employment date: {this.GetEmploymentDate()}\n";
             employeeString += $"Salary: {this.GetSalary()}";
+            employeeString += $"Bonus: {this.SalaryBonus()}";
             return employeeString;
         }
     }
