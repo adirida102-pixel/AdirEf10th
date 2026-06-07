@@ -12,14 +12,14 @@ namespace AdirEf10th
         private int branchNum;
         private int accountNum;
         private string accountID;
-        private double balance;
+        protected double balance;
 
         public static void BasicAccount_UT()
         {
-            BasicAccount a = new BasicAccount(0, 0, 0, "0");
-            Console.WriteLine(a.GetBalance());
-            Console.WriteLine(a.Deposit(1000000));
-            Console.WriteLine(a.GetBalance());
+            //BasicAccount a = new BasicAccount(0, 0, 0, "0");
+            //Console.WriteLine(a.GetBalance());
+            //Console.WriteLine(a.Deposit(1000000));
+            //Console.WriteLine(a.GetBalance());
         }
 
         public BasicAccount(int bankNum, int branchNum, int accountNum, string accountID)
@@ -56,7 +56,12 @@ namespace AdirEf10th
             return this.balance;
         }
 
-        public bool Deposit(int num)
+        public void SetBalance(double balance)
+        {
+            this.balance = balance;
+        }
+
+        public virtual bool Deposit(int num)
         {
             bool success = false;
             if (num > 0)
@@ -65,6 +70,12 @@ namespace AdirEf10th
                 success = true;
             }
             return success;
+        }
+
+        public override string ToString()
+        {
+            string savingString = $"Bank number: {this.GetBankNum()}\nBranch number: {this.GetBranchNum()}\nAccount number: {this.GetAccountNum()}\nAccount ID: {this.GetAccountID()}\nBalance: {this.GetBalance()}";
+            return savingString;
         }
     }
 }

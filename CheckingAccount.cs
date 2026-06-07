@@ -7,15 +7,10 @@ using System.Threading.Tasks;
 
 namespace AdirEf10th
 {
-    public class CheckingAccount
+    public class CheckingAccount : BasicAccount
     {
         const double DEFAULT_OVERDRAFT = 1000;
 
-        private int bankNum;
-        private int branchNum;
-        private int accountNum;
-        private string accountID;
-        private double balance;
         private double overdraft;
 
         public static void CheckingAccount_UT()
@@ -41,48 +36,15 @@ namespace AdirEf10th
         }
 
         public CheckingAccount(int bankNum, int branchNum, int accountNum, string accountID)
+            : base(bankNum, branchNum, accountNum, accountID)
         {
-            this.bankNum = bankNum;
-            this.branchNum = branchNum;
-            this.accountNum = accountNum;
-            this.accountID = accountID;
-            this.balance = 0;
             this.overdraft = CheckingAccount.DEFAULT_OVERDRAFT;
         }
 
         public CheckingAccount(int bankNum, int branchNum, int accountNum, string accountID, double overdraft)
+            : base(bankNum, branchNum, accountNum, accountID)
         {
-            this.bankNum = bankNum;
-            this.branchNum = branchNum;
-            this.accountNum = accountNum;
-            this.accountID = accountID;
-            this.balance = 0;
             this.overdraft = overdraft;
-        }
-
-        public int GetBankNum()
-        {
-            return this.bankNum;
-        }
-
-        public int GetBranchNum()
-        {
-            return this.branchNum;
-        }
-
-        public int GetAccountNum()
-        {
-            return this.accountNum;
-        }
-
-        public string GetAccountID()
-        {
-            return this.accountID;
-        }
-
-        public double GetBalance()
-        {
-            return this.balance;
         }
 
         public double GetOverdraft()
@@ -98,17 +60,6 @@ namespace AdirEf10th
             }
         }
 
-        public bool Deposit(int num)
-        {
-            bool success = false;
-            if (num > 0)
-            {
-                this.balance += num;
-                success = true;
-            }
-            return success;
-        }
-
         public bool Withdrawal(int num)
         {
             bool success = false;
@@ -122,7 +73,7 @@ namespace AdirEf10th
 
         public override string ToString()
         {
-            string checkingString = $"Bank number: {this.GetBankNum()}\nBranch number: {this.GetBranchNum()}\nAccount number: {this.GetAccountNum()}\nAccount ID: {this.GetAccountID()}\nBalance: {this.GetBalance()}\nOverdraft: {this.GetOverdraft()}";
+            string checkingString = $"{base.ToString()}\nOverdraft: {this.GetOverdraft()}";
             return checkingString;
         }
     }

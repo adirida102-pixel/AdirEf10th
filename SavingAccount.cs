@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace AdirEf10th
 {
-    public class SavingAccount
+    public class SavingAccount : BasicAccount
     {
-        private int bankNum;
-        private int branchNum;
-        private int accountNum;
-        private string accountID;
-        private double balance;
         private Date endDate;
 
         public static void SavingAccount_UT()
@@ -38,59 +33,14 @@ namespace AdirEf10th
         }
 
         public SavingAccount(int bankNum, int branchNum, int accountNum, string accountID, Date endDate)
+            : base(bankNum, branchNum, accountNum, accountID)
         {
-            this.bankNum = bankNum;
-            this.branchNum = branchNum;
-            this.accountNum = accountNum;
-            this.accountID = accountID;
-            this.balance = 0;
             this.endDate = endDate;
-        }
-
-        public int GetBankNum()
-        {
-            return this.bankNum;
-        }
-
-        public int GetBranchNum()
-        {
-            return this.branchNum;
-        }
-
-        public int GetAccountNum()
-        {
-            return this.accountNum;
-        }
-
-        public string GetAccountID()
-        {
-            return this.accountID;
-        }
-
-        public double GetBalance()
-        {
-            return this.balance;
         }
 
         public Date GetEndDate()
         {
             return this.endDate;
-        }
-
-        public void SetEndDate(Date endDate)
-        {
-            this.endDate = endDate;
-        }
-
-        public bool Deposit(int num)
-        {
-            bool success = false;
-            if (num > 0)
-            {
-                this.balance += num;
-                success = true;
-            }
-            return success;
         }
 
         public bool Withdrawal(int num, Date date)
@@ -106,7 +56,7 @@ namespace AdirEf10th
 
         public override string ToString()
         {
-            string savingString = $"Bank number: {this.GetBankNum()}\nBranch number: {this.GetBranchNum()}\nAccount number: {this.GetAccountNum()}\nAccount ID: {this.GetAccountID()}\nBalance: {this.GetBalance()}\nEnd date: {this.GetEndDate().ToString()}";
+            string savingString = $"{base.ToString()}\nEnd date: {this.GetEndDate().ToString()}";
             return savingString;
         }
     }
