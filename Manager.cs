@@ -10,12 +10,12 @@ namespace AdirEf10th
     {
         private string title;
 
-        public Manager(string title, string name, Date employmentDate) : base(name, employmentDate) //check if possible without ':', inside the function
+        public Manager(string title, string name, Date employmentDate) : base(name, employmentDate)
         {
             this.title = title;
         }
 
-        public Manager(string title, string name, Date employmentDate, double salary) : base(name, employmentDate, salary) //check if possible without ':', inside the function
+        public Manager(string title, string name, Date employmentDate, double salary) : base(name, employmentDate, salary)
         {
             this.title = title;
         }
