@@ -61,7 +61,7 @@ namespace AdirEf10th
             this.salary = finalSalary;
         }
 
-        public double SalaryBonus()
+        public virtual double SalaryBonus()
         {
             return this.GetSalary() * 1.7;
         }

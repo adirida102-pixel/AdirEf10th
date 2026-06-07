@@ -25,10 +25,15 @@ namespace AdirEf10th
             return this.title;
         }
 
-        //bonus function: virtual? -> override???
+        public override double SalaryBonus()
+        {
+            return this.GetSalary() * 10;
+        }
 
-        //tostring function: base?
-
-        //check later
+        public override string ToString()
+        {
+            string str = $"{this.GetTitle()}\n{base.ToString()}";
+            return str;
+        }
     }
 }
