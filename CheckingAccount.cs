@@ -71,6 +71,11 @@ namespace AdirEf10th
             return success;
         }
 
+        public bool Pay()
+        {
+            
+        }
+        
         public override string ToString()
         {
             string checkingString = $"{base.ToString()}\nOverdraft: {this.GetOverdraft()}";

@@ -6,8 +6,36 @@ using System.Threading.Tasks;
 
 namespace AdirEf10th
 {
-    public class BusinessAccount
+    public class BusinessAccount : CheckingAccount
     {
+        private string businessName;
 
+        public BusinessAccount(int bankNum, int branchNum, int accountNum, string accountID, string businessName)
+            : base(bankNum, branchNum, accountNum, accountID)
+        {
+            this.businessName = businessName;
+        }
+
+        public BusinessAccount(int bankNum, int branchNum, int accountNum, string accountID, double overdraft, string businessName)
+            : base(bankNum, branchNum, accountNum, accountID, overdraft)
+        {
+            this.businessName = businessName;
+        }
+
+        public string GetBusinessName()
+        {
+            return this.businessName;
+        }
+
+        public void SetBusinessName(string businessName)
+        {
+            this.businessName = businessName;
+        }
+
+        public override string ToString()
+        {
+            string businessString = $"{base.ToString()}\nBusiness name: {this.GetBusinessName()}";
+            return businessString;
+        }
     }
 }
