@@ -71,10 +71,10 @@ namespace AdirEf10th
             return success;
         }
 
-        public bool Pay()
-        {
+        //public bool Pay()
+        //{
             
-        }
+        //}
         
         public override string ToString()
         {
